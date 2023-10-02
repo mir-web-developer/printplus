@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  /* overfow: hidden; Чтобы круги не выходили за пределы экрана */
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Разместить фон под контентом */
+}
+
+/* Стили для кругов */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(173, 216, 230, 0.7); /* Розовый цвет с прозрачностью */
+  animation: moveCircle 20s linear infinite; /* Анимация движения */
+}
+
+@keyframes moveCircle {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(-50vh) translateX(50vw) scale(2); /* Движение вверх и вправо */
+    opacity: 1; /* Появление */
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100vw) scale(1); /* Возврат на начальное положение */
+    opacity: 0; /* Исчезновение */
+  }
+}
+
+/*        ScrollBar 5    */
+
+.scrollbar {
+  height: 300px;
+  width: 50%;
+  overflow: auto;
+  padding: 0 10px;
+  display: none;
+}
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 12px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.5, #a520ca),
+    color-stop(1, #2681cc)
+  );
+  border-radius: 10px;
+}
+
+.dot-wave {
+  margin-top: 30%;
+  margin-left: 45%;
+}
+
+.app-bar {
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(0);
+}
+
+.app-bar-hidden {
+  transform: translateY(-100%);
+}
+
+.toolbar-placeholder {
+  height: 64px; /* Высота вашей панели приложения */
+}
